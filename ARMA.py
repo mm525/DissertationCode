@@ -14,7 +14,7 @@ class bondStats:
     
     # Select the security's return over the time period
     def get_data(self):
-        df = pd.read_excel('/Users/marcusmayfield/Documents/Diss_Bond_Data_excl30v2.xlsx')
+        df = pd.read_excel('[file_name].xlsx')
         df = df.dropna(axis = 0)
         self.date = np.array(df['Date']).reshape(-1,1)
         self.data = np.array(df[self.symbol]).reshape(-1,1)

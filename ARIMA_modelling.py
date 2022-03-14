@@ -18,7 +18,11 @@ class bondStats:
         df = df.dropna(axis = 0)
         self.date = np.array(df['Date']).reshape(-1,1)
         self.data = np.array(df[self.symbol]).reshape(-1,1)
+        
+        # Calculate first difference of the time series
         self.data_diff = df[self.symbol].diff().dropna()
+        
+        # Create a new DataFrame that contains the dummy variables - needed for the ARIMA model
         self.dummies = df[['QE1', 'QE2', 'QE3', 'QE4']]
     
     # Plot graph of the security's returns over time 

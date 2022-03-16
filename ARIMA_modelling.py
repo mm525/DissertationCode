@@ -57,7 +57,7 @@ class bondStats:
         plot_acf(self.data_diff, ax = ax3[0])        
         plot_pacf(self.data_diff, ax = ax3[1])
 
-    # Model the time series as an ARMA process (regression includes dummy variables)
+    # Model the time series as an AR(I)MA process (regression includes dummy variables)
     def mod_ARMA(self, ar, integ = 0, ma):
         self.ar = ar
         self.ma = ma
@@ -75,7 +75,7 @@ class bondStats:
         # Examine degree of autocorrelation (i.e. proxy for degree of model misspecification) 
         print(f'Durbin-Watson statistic: {str(durbin_watson(self.residuals))}')
 
-    # Evaluate the best ARMA model by outputting AIC and BIC, subject to specified maximum AR and MA lags
+    # Evaluate the best AR(I)MA model by outputting AIC and BIC, subject to specified maximum AR and MA lags
     def eval_ARMA(self, ar_max, integ1 = 0, ma_max):
         self.ar_max = ar_max
         self.ma_max = ma_max

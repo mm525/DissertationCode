@@ -16,7 +16,7 @@ class bondStats:
     
     # Select the security's return over the time period
     def get_data(self):
-        df = pd.read_excel('/Users/marcusmayfield/Documents/DissertationData/USBandE/USBonds_and_Equities_3dayv1.xlsx')
+        df = pd.read_excel('[file_name].xlsx')
         df = df.dropna(axis = 0)
         self.date = np.array(df['Date']).reshape(-1,1)
         self.data = np.array(df[self.symbol]).reshape(-1,1)
@@ -103,7 +103,7 @@ class equityStats(bondStats): # Create new class for Equities so that it inherit
                               # instead of just prices
     
     def get_data(self):
-        df = pd.read_excel('/Users/marcusmayfield/Documents/DissertationData/USBandE/USBonds_and_Equities_3dayv1.xlsx')
+        df = pd.read_excel('[file_name].xlsx')
         df = df.dropna(axis = 0)
         self.date = np.array(df['Date'][1:])
         self.price = df[self.symbol]

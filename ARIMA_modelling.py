@@ -105,8 +105,7 @@ class equityStats(bondStats): # Create new class for Equities so that it inherit
         df = pd.read_excel('[file_name].xlsx')
         df = df.dropna(axis = 0)
         self.date = np.array(df['Date'][1:])
-        self.price = df[self.symbol]
-        self.data = np.array(np.log(self.price/self.price.shift(1)).dropna()).reshape(-1,1)
+        self.data = np.array(np.log(df[self.symbol]/df[self.symbol].shift(1)).dropna()).reshape(-1,1)
         self.dummies = df[['QE1', 'QE2', 'QE3', 'QE4']][1:]
 
     def acp_GARCH(self):

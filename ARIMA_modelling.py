@@ -101,8 +101,8 @@ class equityStats(bondStats):
     """
     
     Create new class for Equities so that it inherits all bondStats methods but re-defines the variable self.data in terms of (ln) returns rather
-    than just prices, and re-defines certain methods to account for not needing to difference the time series 
-    (i.e. replaced self.data_diff with self.data)
+    than just prices, and re-defines certain methods to account for not needing to difference the time series (i.e. replacement of self.data_diff 
+    with self.data)
     
     """
     
